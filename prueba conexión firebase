@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Ejemplo firebase</title>
+
+</head>
+<body>
+<h1 id= "Pruebataxis"></h1>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCLCRmLP3ZPqWvQokp8EC3mL0cjBYL3OAA",
+    authDomain: "pruebataxis-d2c8e.firebaseapp.com",
+    databaseURL: "https://pruebataxis-d2c8e.firebaseio.com",
+    projectId: "pruebataxis-d2c8e",
+    storageBucket: "pruebataxis-d2c8e.appspot.com",
+    messagingSenderId: "368783468134"
+  };
+  firebase.initializeApp(config);
+  var Pruebataxis = document.getElementById('Pruebataxis');
+  var dbRef = firebase.databse().ref().child('text');
+  dbRef.on('value', snap => Pruebataxis.innerText = snap.val() );
+</script>
+</body>
+</html>
